@@ -156,6 +156,7 @@ export class PushClient{
 					Notification.requestPermission((result) => {
 						if (result !== 'granted') {
 							console.log('[subscribeDevice] => Bad permission result')
+								alert('Bad permission result: '+ result);
 							reject(new Error('Bad permission result'));
 						}
 						else{
