@@ -24,13 +24,13 @@
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="pwa_push_via_js">
+  <meta name="apple-mobile-web-app-title" content="PWA push notifications via JS">
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png" />
 
-  <title>pwa_push_via_js</title>
+  <title>PWA push notifications via JS</title>
   <link rel="manifest" href="manifest.json">
 
   <script>
@@ -46,6 +46,8 @@
   <script>
     window.addEventListener('load', function (ev) {
       var loading = document.querySelector('#loading');
+
+
       loading.textContent = "Loading entrypoint...";
       // Download main.dart.js
       _flutter.loader.loadEntrypoint({
@@ -62,6 +64,10 @@
         }
       });
     });
+  </script>
+  <script type="module">
+    import {pushPreparing} from './scripts/app-controller.js';
+    pushPreparing();
   </script>
 </body>
 
